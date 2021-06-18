@@ -1,0 +1,33 @@
+extends layout
+block content
+
+    div(class="row")
+        div(class="col")
+            h1 Profile information:
+            br
+            label Name:
+            Strong  #{user.name}
+            br
+            label Username:  
+            Strong  #{user.username}
+            br
+            label Email:  
+            Strong  #{user.email}
+            br
+            label User type:
+            if  user.isAdmin
+                Strong  Admin 
+            else 
+                Strong  Registered user  
+            br
+            br
+            h1 Change password:
+            br
+            form(method='POST',action='/users/changepassword/'+user._id)
+                input(class="form-control" placeholder="Old Password" type="password" name="oldPassword")
+                br
+                input(class="form-control" placeholder="New Password" type="password" name="password")
+                br
+                input(class="form-control" placeholder="Confirm New Password" type="password" name="password1")
+                br
+                input.btn.btn-primary(type='submit', value='Change')

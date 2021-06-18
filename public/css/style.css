@@ -1,0 +1,41 @@
+.alert-error{
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert-success_msg{
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+body{
+    background-color:rgba(31, 118, 218, 0.3);
+}
+.filepond--root {
+    height: 288px;
+}
+.list-group-item{
+    background-color: white;
+}
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+.nav-link{
+    position: relative;
+}
+.cart-num{
+    text-align: center;
+    padding: 2px;
+    position: absolute;
+    color: white;
+    top: -4px;
+    min-width: 17px;
+    font-size: 0.7em;
+    margin-bottom: 0;
+    border-radius: 50px;
+    background-color: rgba(255, 0, 0, 0.63);
+    left: 35px;
+}

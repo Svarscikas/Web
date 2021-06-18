@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1(class="text-center align-middle") My coins
+    br
+    - var count = 0;
+    ul(class="list-group")
+        each coin, i in coins
+            if user._id == coin.userID
+                - count= count + 1
+                li.list-group-item
+                    div(class="row")
+                        div(class="col-sm-4")
+                            img(class="mx-auto d-block" ,height="150px", width="150px", src=coin.coverImagePath)
+                        div(class="col-sm-8 text-center")
+                            a(class="fw-bold", href="/coins/" + coin._id )= coin.name
+                            p #{coin.description}
+                            p <strong> Price:</strong> #{coin.price} EUR
+                            a(href="/add-to-cart/" + coin._id class="btn btn-warning" role="button") Add to cart
+    if count == 0
+        h2 You do not have any products added in your account

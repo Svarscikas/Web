@@ -1,0 +1,22 @@
+extends layout
+block content
+    h1(class="text-center align-middle") Shopping cart
+    br
+    if coins
+        ul(class="list-group")   
+            each coin, i in coins
+                li.list-group-item
+                    div(class="row")
+                        div(class="col text-center" )
+                            a(class="fw-bold", href="/coins/" + coin.item._id )= coin.item.name
+                        div(class="col text-center")
+                            p <strong>Quantity:</strong> x#{coin.qty}
+                        div(class="col text-center")
+                            p <strong>Price:</strong> #{coin.price*coin.qty} EUR
+        br
+        h5 <strong> Total price:</strong> #{totalPrice} EUR
+        br
+        a(href="" class="btn btn-warning disabled" role="button") Checkout
+        
+    else
+        h4(class="text-center align-middle") Your shopping cart is empty        

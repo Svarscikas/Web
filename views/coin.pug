@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    div(class="row")
+        div(class="col-4")
+            img(class='img-thumbnail', width="100%" src= coin.coverImagePath)
+        div(class="col-8")
+            h1 #{coin.name}
+            p <strong>Denomination:</strong> #{coin.denomination}
+            p <strong>Mint:</strong> #{coin.mint} minted
+            p <strong>Country:</strong> #{coin.country}
+            p <strong>Description:</strong> #{coin.description}
+            h4 <strong>Price:</strong> #{coin.price} EUR
+    hr
+    if user
+        if user.isAdmin
+            a(class="btn btn-info", href='/coins/edit/'+ coin._id) Edit
+            a(class="btn btn-danger delete-coin",href="#", data-id = coin._id) Delete
+        else
+            if user._id == coin.userID 
+                a(class="btn btn-info", href='/coins/edit/'+ coin._id) Edit
+                a(class="btn btn-danger delete-coin",href="#", data-id = coin._id) Delete
+    
