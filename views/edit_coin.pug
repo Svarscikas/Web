@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+    h1(class="text-center align-middle") Edit coin
+    hr
+    br
+    form(method='POST',action='/coins/edit/' + coin._id)
+        div(class="row")
+            div(class="col")
+                input(class="form-control", placeholder="Name", value = coin.name, type="text", name="name")
+                br            
+                input(class="form-control", placeholder="Denomination", value = coin.denomination, type="text", name="denomination")
+                br
+                input(class="form-control", placeholder="Mint", value = coin.mint, type="text", name="mint")
+                br
+                input(class="form-control", placeholder="Price" value = coin.price type="text" name="price")
+                br
+                input(class="form-control", placeholder="Country", value = coin.country, type="text", name="country")
+                br
+            div(class="col")
+                input(class="filepond", type="file", name="cover", style="height: 100%")             
+        div(class="row")
+            div(class="col")
+                textarea(class="form-control", type="text", placeholder = "Description goes here", name ="description" ) #{coin.description}
+        div(class="row")
+            div(class="col text-center")
+                br
+                input.btn.btn-primary(type='submit', value='Edit')

@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    h1(class="text-center align-middle") Coins
+    br
+    div(class="text-center")
+        form(method='POST',action='/search')
+            input(class="form-control" placeholder="Enter product name" type="text" name="search")
+            br
+            input.btn.btn-primary(type='submit', value='Search')
+
+    br
+    ul(class="list-group")
+        each coin, i in coins
+            li.list-group-item
+                div(class="row")
+                    div(class="col-sm-4")
+                        img(class="mx-auto d-block" ,height="150px", width="150px", src=coin.coverImagePath)
+                    div(class="col-sm-8 text-center")
+                        a(class="fw-bold", href="/coins/" + coin._id )= coin.name
+                        p #{coin.description}
+                        p <strong> Price:</strong> #{coin.price} EUR
+                        a(href="/add-to-cart/" + coin._id class="btn btn-warning" role="button") Add to cart
+                

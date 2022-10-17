@@ -1,0 +1,29 @@
+extends layout
+
+block content
+
+    h1(class="text-center align-middle") Add new coin
+    hr
+    br
+    form(method='POST',action='/coins/add')
+        div(class="row")
+            div(class="col")
+                input(class="form-control" placeholder="Name" type="text" name="name")
+                br            
+                input(class="form-control" placeholder="Denomination" type="text" name="denomination")
+                br
+                input(class="form-control" placeholder="Mint" type="text" name="mint")
+                br
+                input(class="form-control" placeholder="Price" type="text" name="price")
+                br
+                input(class="form-control" placeholder="Country" type="text" name="country")
+                br
+            div(class="col")
+                input(class="filepond" type="file" name="cover" style="height: 100%")             
+        div(class="row")
+            div(class="col")
+                textarea(class="form-control" type="text" placeholder = "Description goes here" name ="description" )
+        div(class="row")
+            div(class="col text-center")
+                br
+                input.btn.btn-primary(type='submit', value='Submit')

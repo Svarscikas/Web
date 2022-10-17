@@ -1,0 +1,41 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Numismatic online store",
+  "main": "app.js",
+  "scripts": {
+    "test": "It's on LETS GO"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Svarscikas/Server.git"
+  },
+  "keywords": [
+    "coins",
+    "store",
+    "numismatics",
+    "banknotes",
+    "gold",
+    "silver",
+    "copper"
+  ],
+  "author": "Arnas Erslovas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Svarscikas/Server/issues"
+  },
+  "homepage": "https://github.com/Svarscikas/Server#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-messages": "^1.0.1",
+    "express-session": "^1.17.1",
+    "express-validator": "^6.8.0",
+    "git": "^0.1.5",
+    "mongoose": "^5.11.8",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "pug": "^3.0.0"
+  }
+}
